@@ -1,9 +1,9 @@
 import React from 'react'
-import Dashboard from '../components/Dashboard'
+import Dashboard from '../components/dashboard/Dashboard'
 
 const DashboardPage = () => {
   return (
-    <div>
+    <div className='container-fluid'>
       <Dashboard />
     </div>
   )

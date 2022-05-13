@@ -1,8 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Header from './common/Header';
-import Footer from './common/Footer';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <HomePage /> } />
         <Route path="dashboard" element={ <DashboardPage /> } />
+        <Route path="about" element={ <AboutPage /> } />
       </Routes>
       </main>
       <footer>
