@@ -8,7 +8,7 @@ const Header = () => {
     background: "#7600dc",
   };
   return (
-    <nav class="custom-nav navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="custom-nav navbar navbar-expand-lg navbar-dark bg-primary">
       <NavLink
         className="navbar-brand"
         to="/"
