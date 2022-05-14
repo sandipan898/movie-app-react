@@ -15,7 +15,7 @@ const Header = () => {
         className="navbar-brand"
         to="/"
       >
-        Movie App
+        Movie Gallery
       </NavLink>
       <button
         className="navbar-toggler"
