@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllTrendingsAction } from "../../redux/actions/MovieActions";
 import Loader from "../common/Loader";
 import MovieCard from "../common/MovieCard/MovieCard";
-// import './dashboard.css';
 
 const Trending = ({ getAllTrendingsAction, trendings }) => {
   useEffect(() => {
