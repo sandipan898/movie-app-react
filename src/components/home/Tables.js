@@ -1,35 +1,28 @@
 import React from "react";
+import Loader from '../common/Loader';
 
-const Tables = () => {
+const Tables = ({ data, loading }) => {
   return (
-    <table className="table table-dark">
+    <table className="table text-light">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th style={{ background: '#09006e' }} className="h4 text-center p-4" scope="col">Genre Name</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+      <tbody> 
+        { loading 
+          ? <div align='center'>
+              <Loader loadingText='Loading Genres' />
+            </div>
+          : data && data.map(({id, name}) => (
+            <tr className="text-center card my-2" style={{ background: '#0f37ff' }} key={id}>
+              <div className="card py-3">
+                <h5 className="card-body">
+                  {name}
+                </h5>
+              </div>
+            </tr>
+          ))}
       </tbody>
     </table>
   );
