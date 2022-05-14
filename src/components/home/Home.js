@@ -29,7 +29,7 @@ const Home = ({ getAllGenresAction, clearStateAction, genres }) => {
   }
   
   return (
-    <div className="home-main">
+    <div className="container home-main">
       <div className="row">
         <div className="col-md-6">
           <div className="card bg-dark mb-5">

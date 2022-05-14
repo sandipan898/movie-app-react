@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage';
 import AboutPage from './pages/AboutPage';
 import './App.css';
 import TrendingPages from "./pages/TrendingPages";
+import ExplorePage from "./pages/ExplorePage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={ <HomePage /> } />
         <Route path="dashboard" element={ <DashboardPage /> } />
         <Route path="trending" element={ <TrendingPages /> } />
+        <Route path="explore/:slug" element={ <ExplorePage /> } />
         <Route path="about" element={ <AboutPage /> } />
       </Routes>
       </main>

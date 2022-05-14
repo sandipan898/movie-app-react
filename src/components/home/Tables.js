@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Loader from '../common/Loader';
 
 const Tables = ({ data, loading }) => {
@@ -20,6 +21,9 @@ const Tables = ({ data, loading }) => {
                 <h5 className="card-body">
                   {name}
                 </h5>
+                <div className="card-footer">
+                  <Link className="btn btn-sm btn-secondary" state={{'genreName': name, genreId: id}} to={`/explore/${name.toLowerCase()}`}>Explore Movies</Link>
+                </div>
               </div>
             </tr>
           ))}

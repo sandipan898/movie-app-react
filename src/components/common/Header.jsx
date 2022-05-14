@@ -6,7 +6,9 @@ const Header = () => {
   const activeStyle = {
     color: "#fff",
     background: "#7600dc",
+    borderRadius: '0.4rem'
   };
+
   return (
     <nav className="custom-nav navbar navbar-expand-lg navbar-dark bg-primary">
       <NavLink
@@ -28,7 +30,7 @@ const Header = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarText">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
+          <li className="nav-item">
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : {})}
               className="nav-link"
@@ -37,7 +39,7 @@ const Header = () => {
               Home
             </NavLink>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : {})}
               className="nav-link"
@@ -46,7 +48,7 @@ const Header = () => {
               Dashboard
             </NavLink>
           </li>
-          <li className="nav-item active">
+          <li className="nav-item">
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : {})}
               className="nav-link"

@@ -1,26 +1,15 @@
 import React, { useCallback, useRef, useState } from "react";
-import { connect } from "react-redux";
 import useFetchMovies from "../../hooks/useFetchMovies";
-import { getMoviesAction } from "../../redux/actions/MovieActions";
-import MovieCard from "../common/MovieCard/MovieCard";
 import Loader from "../common/Loader";
-import "./dashboard.css";
+import MovieCard from "../common/MovieCard/MovieCard";
 
-const Dashboard = ({ getMoviesAction }) => {
-  // useEffect(() => {
-  //   console.log("movies", movies);
-  //   if(!movies || movies?.length === 0) {
-  //     getMoviesAction();
-  //   }
-  // }, []);
-
-
+const ExploreMovies = ({ genre }) => {
   const [pageNumber, setPageNumber] = useState(1);
 
-  const { loading, error, movies, hasMore } = useFetchMovies(pageNumber);
-
+  const { loading, error, movies, hasMore } = useFetchMovies(pageNumber, genre);
+  console.log("movies", movies);
+  
   const observer = useRef();
-
   const lastBookElementRef = useCallback(
     (node) => {
       if (loading) return;
@@ -67,21 +56,12 @@ const Dashboard = ({ getMoviesAction }) => {
             )
           )}
       </div>
-      <div align='center' className="text-white">{loading && <Loader loadingText='Loading movies' />}</div>
-      <div>{error && 'Error'}</div>
+      <div align="center" className="text-white">
+        {loading && <Loader loadingText="Loading movies" />}
+      </div>
+      <div>{error && "Error"}</div>
     </div>
   );
 };
 
-const mapStateToProps = (state) => {
-  console.log("state", state);
-  return {
-    movies: state.movies.movies,
-  };
-};
-
-const mapDispatchToProps = {
-  getMoviesAction,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default ExploreMovies;

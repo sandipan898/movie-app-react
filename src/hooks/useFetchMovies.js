@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-// import { getMovies } from '../services/MovieServices';
 import axios from "axios";
 
-export default function useFetchMovies(pageNumber) {
+export default function useFetchMovies(pageNumber, genre) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [movies, setMovies] = useState([]);
@@ -26,6 +25,7 @@ export default function useFetchMovies(pageNumber) {
         sort_by: "popularity.desc",
         include_adult: false,
         include_video: true,
+        with_genres: genre ? genre : ''
       },
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
@@ -45,7 +45,7 @@ export default function useFetchMovies(pageNumber) {
         setError(true);
       });
     return () => cancel();
-  }, [pageNumber]);
+  }, [pageNumber, genre]);
 
   return { loading, error, movies, hasMore };
 }
