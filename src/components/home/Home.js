@@ -10,7 +10,8 @@ const Home = ({ getAllGenresAction, clearStateAction, genres }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if(genres?.length === 0) {
+    console.log('genres', genres);
+    if(!genres || genres?.length === 0) {
       getAllGenresAction();
     }
   }, []);
@@ -75,8 +76,9 @@ const Home = ({ getAllGenresAction, clearStateAction, genres }) => {
 
 
 const mapStateToProps = (state) => {
+  console.log('state', state);
   return {
-      genres: state.movies
+      genres: state.movies.genres
   };
 };
 

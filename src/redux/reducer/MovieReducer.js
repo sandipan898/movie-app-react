@@ -7,10 +7,11 @@ const movieReducer = (state = initialState, action) => {
 
     switch (type) {
     case Types.GET_ALL_GENRES:
-        return payload;
+        console.log('GET_ALL_GENRES', state);
+        return {...state, genres: payload};
     case Types.GET_ALL_TRENDINGS:
         console.log('Data -> GET_ALL_TRENDINGS', payload);
-        return payload;
+        return {...state, trendings: payload};
     case Types.CLEAR_STATE:
         return payload;
     default:

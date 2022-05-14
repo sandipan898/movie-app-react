@@ -1,31 +1,41 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllTrendingsAction } from "../../redux/actions/MovieActions";
+import MovieCard from "../common/MovieCard/MovieCard";
+import './dashboard.css';
 
-const Dashboard = ({ getAllTrendingsAction, movies }) => {
+const Dashboard = ({ getAllTrendingsAction, trendings }) => {
   useEffect(() => {
-    console.log("movies", movies);
-    if (movies?.length === 0) {
+    console.log("trendings", trendings);
+    if (!trendings || trendings?.length === 0) {
       getAllTrendingsAction();
     }
-  }, [movies]);
+  }, []);
 
   return (
-    <div>
-      <div class="container">
-        {/* <div class="row">
-          <div className="col-md-3 col-sm-12">One of three columns</div>
-          <div className="col-md-3 col-sm-12">One of three columns</div>
-          <div className="col-md-3 col-sm-12">One of three columns</div>
-        </div> */}
+    <div className='container-fluid'>
+      <div className="movieCard">
+        {trendings &&
+          trendings.map((movie) => 
+            <MovieCard
+              key={movie.id}
+              id={movie.id}
+              poster={movie.poster_path}
+              title={movie.title || movie.name}
+              date={movie.first_air_date || movie.release_date}
+              media_type={movie.media_type}
+              vote_average={movie.vote_average}
+            />
+          )}
       </div>
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
+  console.log('state', state);
   return {
-    movies: state.movies,
+    trendings: state.movies.trendings,
   };
 };
 
