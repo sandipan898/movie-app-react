@@ -11,6 +11,7 @@
   }
   
   .media:hover {
+    transition-duration: 500ms;
     background-color: #0f37ff;
   }
   
