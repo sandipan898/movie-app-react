@@ -3,31 +3,43 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="text-center text-lg-start text-dark" style={{background: '#9e9da1'}}>
+    <footer className="text-center text-lg-start text-dark" style={{ background: '#9e9da1' }}>
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span><strong>Get connected with us on social networks</strong></span>
         </div>
 
         <div>
-          <Link to="/" className="me-4 text-reset">
+          <a rel="noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/in/sandipan-das-528166175/" className="me-4 text-reset">
             <i className="fa fa-facebook-f"></i>
-          </Link>
-          <Link to="/" className="me-4 text-reset">
+          </a >
+          <a rel="noreferrer"
+            target="_blank"
+            href="https://twitter.com/Sandipa63062640" className="me-4 text-reset">
             <i className="fa fa-twitter"></i>
-          </Link>
-          <Link to="/" className="me-4 text-reset">
+          </a >
+          <a rel="noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/in/sandipan-das-528166175/" className="me-4 text-reset">
             <i className="fa fa-google"></i>
-          </Link>
-          <Link to="/" className="me-4 text-reset">
+          </a >
+          <a rel="noreferrer"
+            target="_blank"
+            href="https://www.instagram.com/your_sandipan_das/" className="me-4 text-reset">
             <i className="fa fa-instagram"></i>
-          </Link>
-          <Link to="/" className="me-4 text-reset">
+          </a >
+          <a rel="noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/in/sandipan-das-528166175/" className="me-4 text-reset">
             <i className="fa fa-linkedin"></i>
-          </Link>
-          <Link to="/" className="me-4 text-reset">
+          </a >
+          <a rel="noreferrer"
+            target="_blank"
+            href="https://github.com/sandipan898" className="me-4 text-reset">
             <i className="fa fa-github"></i>
-          </Link>
+          </a >
         </div>
       </section>
 
@@ -40,7 +52,7 @@ const Footer = () => {
           className="text-reset fw-bold"
           rel="noreferrer"
           target="_blank"
-          href="https://sandipandas.herokuapp.com"
+          href="https://github.com/sandipan898"
         >
           Sandipan Das
         </a>
