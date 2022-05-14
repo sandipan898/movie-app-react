@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllTrendingsAction } from "../../redux/actions/MovieActions";
+import Loader from "../common/Loader";
 import MovieCard from "../common/MovieCard/MovieCard";
 // import './dashboard.css';
 
@@ -15,7 +16,9 @@ const Trending = ({ getAllTrendingsAction, trendings }) => {
   return (
     <div className='container-fluid'>
       <div className="movieCard">
-        {trendings &&
+        {trendings?.length === 0 
+        ? <Loader />
+        : trendings &&
           trendings.map((movie) => 
             <MovieCard
               key={movie.id}
