@@ -46,6 +46,15 @@ const Header = () => {
               Dashboard
             </NavLink>
           </li>
+          <li className="nav-item active">
+            <NavLink
+              style={({ isActive }) => (isActive ? activeStyle : {})}
+              className="nav-link"
+              to="/trending"
+            >
+              Trending
+            </NavLink>
+          </li>
           <li className="nav-item">
             <NavLink
               style={({ isActive }) => (isActive ? activeStyle : {})}

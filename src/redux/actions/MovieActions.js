@@ -10,7 +10,7 @@ export const getAllTrendings = (trendings) => {
 };
 
 export const getMovies = (movies) => {
-    return { type: Types.GET_ALL_TRENDINGS, payload: movies };
+    return { type: Types.GET_MOVIES, payload: movies };
 };
 
 export const clearStateAction = () => {
@@ -34,6 +34,17 @@ export const getAllTrendingsAction = () => (
             .then(data => data.results)
             .then(trendings => {
                 dispatch(getAllTrendings(trendings));
+            })
+            .catch(error => console.log(error));
+    }
+);
+
+export const getMoviesAction = () => (
+    (dispatch) => {
+        return AdminServices.getMovies()
+            .then(data => data.results)
+            .then(movies => {
+                dispatch(getMovies(movies));
             })
             .catch(error => console.log(error));
     }

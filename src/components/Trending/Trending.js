@@ -1,25 +1,22 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getMoviesAction } from "../../redux/actions/MovieActions";
+import { getAllTrendingsAction } from "../../redux/actions/MovieActions";
 import MovieCard from "../common/MovieCard/MovieCard";
-import './dashboard.css';
+// import './dashboard.css';
 
-const Dashboard = ({ getMoviesAction, movies }) => {
+const Trending = ({ getAllTrendingsAction, trendings }) => {
   useEffect(() => {
-    console.log("movies", movies);
-    // if (!trendings || trendings?.length === 0) {
-    //   getAllTrendingsAction();
-    // }
-    if(!movies || movies?.length === 0) {
-      getMoviesAction();
+    console.log("trendings", trendings);
+    if (!trendings || trendings?.length === 0) {
+      getAllTrendingsAction();
     } 
   }, []);
 
   return (
     <div className='container-fluid'>
       <div className="movieCard">
-        {movies &&
-          movies.map((movie) => 
+        {trendings &&
+          trendings.map((movie) => 
             <MovieCard
               key={movie.id}
               id={movie.id}
@@ -38,12 +35,12 @@ const Dashboard = ({ getMoviesAction, movies }) => {
 const mapStateToProps = (state) => {
   console.log('state', state);
   return {
-    movies: state.movies.movies,
+    trendings: state.movies.trendings,
   };
 };
 
 const mapDispatchToProps = {
-  getMoviesAction
+  getAllTrendingsAction
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(Trending);

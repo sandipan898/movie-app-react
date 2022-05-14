@@ -12,6 +12,9 @@ const movieReducer = (state = initialState, action) => {
     case Types.GET_ALL_TRENDINGS:
         console.log('Data -> GET_ALL_TRENDINGS', payload);
         return {...state, trendings: payload};
+    case Types.GET_MOVIES:
+        console.log('Data -> GET_MOVIES', payload);
+        return {...state, movies: payload};
     case Types.CLEAR_STATE:
         return payload;
     default:
